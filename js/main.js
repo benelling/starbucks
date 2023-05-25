@@ -89,7 +89,7 @@ new Swiper('.promotion .swiper', {
 new Swiper('.awards .swiper', {
   autoplay: true,
   loop: true,
-  spaceBetween: 30,
+  spaceBetween: 30, // 단위는 px임
   slidesPerView: 5,
   navigation: {
     prevEl: '.awards .swiper-prev',
@@ -124,11 +124,11 @@ function floatingObject(selector, delay, size) {
     selector, // 선택자
     random(1.5, 2.5), // 애니메이션 동작 시간
     { // 옵션
-    y: size,
-    repeat: -1,
-    yoyo: true,
-    ease: Power1.easeInOut,
-    delay: random(0, delay)
+      y: size,
+      repeat: -1,
+      yoyo: true,
+      ease: Power1.easeInOut,
+      delay: random(0, delay)
     }
   );
 }
@@ -142,7 +142,7 @@ spyEls.forEach(function (spyEl) {
   new ScrollMagic
     .Scene({
       triggerElement: spyEl, // 보여짐 여부를 감시할 요소를 지정
-      triggerHook: .8
+      triggerHook: .8 // 뷰포트 기준으로 가장 위에서부터 거리 (가장 위가 0, 가장 아래가 1)
     })
     .setClassToggle(spyEl, 'show')
     .addTo(new ScrollMagic.Controller());

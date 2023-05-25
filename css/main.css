@@ -10,7 +10,7 @@ img {
   display: block;
 }
 a {
-  text-decoration: none;
+  text-decoration: none; 
 }
 .inner {
   width: 1100px;
